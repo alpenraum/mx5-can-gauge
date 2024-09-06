@@ -9,7 +9,7 @@
     "snake": false,
     "canSniffer": false,
     "forceStop": false,
-    "sleepTime": 10,
+    "sleepTime": 0,
     "wakupMask": 0
   },
   "wifiConfig": {
