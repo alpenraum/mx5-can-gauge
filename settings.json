@@ -6,10 +6,10 @@
     "autoLogDelay": 5,
     "logFromStart": false,
     "beta": false,
-    "snake": true,
+    "snake": false,
     "canSniffer": false,
     "forceStop": false,
-    "sleepTime": 0,
+    "sleepTime": 10,
     "wakupMask": 0
   },
   "wifiConfig": {
@@ -27,7 +27,7 @@
   },
   "brightHandler": {
     "brightness": 153,
-    "fadeTime": 60,
+    "fadeTime": 30,
     "lockScreen": false
   }
 }

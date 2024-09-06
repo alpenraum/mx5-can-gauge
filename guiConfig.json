@@ -42,7 +42,7 @@
       "cols": 2,
       "paramObj": [
         {
-          "name": "Mass Airflow"
+          "name": "MAF"
         },
         {
           "name": "Engine Load"
@@ -53,7 +53,7 @@
         },
         {
           "displayConfig": 3,
-          "name": "Radiator Temp"
+          "name": "Lambda"
         },
         {
           "displayConfig": 4,
@@ -61,7 +61,7 @@
         },
         {
           "displayConfig": 4,
-          "name": "Oil Temp"
+          "name": "Ignition Angle"
         }
       ]
     },
