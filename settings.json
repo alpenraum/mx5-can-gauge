@@ -1,0 +1,33 @@
+{
+  "config": {
+    "gps": false,
+    "maxLogSpeed": 15,
+    "autoLogEnabled": false,
+    "autoLogDelay": 5,
+    "logFromStart": false,
+    "beta": false,
+    "snake": true,
+    "canSniffer": false,
+    "forceStop": false,
+    "sleepTime": 0,
+    "wakupMask": 0
+  },
+  "wifiConfig": {
+    "forceWifi": true,
+    "wifiSSID": "Logger.S",
+    "wifiPSWD": "logger.s",
+    "ftpServer": "",
+    "ftpUser": "",
+    "ftpPass": "",
+    "ftpPath": "/",
+    "deleteAfterUpload": false,
+    "ntpServer": "pool.ntp.org",
+    "gmtOffset": 0,
+    "daylightOffset": 1
+  },
+  "brightHandler": {
+    "brightness": 153,
+    "fadeTime": 60,
+    "lockScreen": false
+  }
+}
