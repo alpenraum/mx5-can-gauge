@@ -48,7 +48,7 @@
 			"length": 2,
 			"dec": 0,
 			"expr": "x*100/64000",
-			"_note":"always 0 -> scaling wrong?"
+			"_note":"needs more testing and comparison to obd TPS- seems to work from logs"
 		},
 		{
 			"header": "MAP",
