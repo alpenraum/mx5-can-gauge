@@ -6,20 +6,49 @@
 			"header": "Trip 1",
 			"unit": "km",
 			"expr": "trip(\"Trip 1\",x)",
-			"x": "Speed"
+			"x": "Speed",
+			"noLog": true
 		},
 		{
 			"header": "Trip 2",
 			"unit": "km",
 			"expr": "trip(\"Trip 2\",x)",
-			"x": "Speed"
+			"x": "Speed",
+			"noLog": true
 		},
 		{
 			"header": "Engine Speed",
+			"alias": "RPM",
 			"unit": "RPM",
-			"obdPID": 12,
-			"max": 7000,
-			"dec": 0
+			"canId": 514,
+			"offset": 0,
+			"length": 2,
+			"dec": 0,
+			"expr": "x/4",
+			"max": 8000,
+			"_note":"needs filtering - sometimes goes to 16066"
+
+		},
+		{
+			"header": "Speed",
+			"unit": "km/h",
+			"canId": 514,
+			"offset": 2,
+			"length": 2,
+			"dec": 0,
+			"expr": "x/360",
+			"max": 220,
+			"_note":"retest - wrong offset was used"
+		},
+		{
+			"header": "Throttle Position",
+			"unit": "%",
+			"canId": 514,
+			"offset": 4,
+			"length": 2,
+			"dec": 0,
+			"expr": "x*100/64000",
+			"_note":"always 0 -> scaling wrong?"
 		},
 		{
 			"header": "MAP",
@@ -48,12 +77,8 @@
 			"header": "Intake Air Temp",
 			"unit": "°C",
 			"obdPID": 15,
-			"eventsPerMinute": 10
-		},
-		{
-			"header": "Speed",
-			"unit": "km/h",
-			"obdPID": 13
+			"eventsPerMinute": 10,
+			"autoLogPoint": 60
 		},
 		{
 			"header": "Coolant Temp",
@@ -96,10 +121,55 @@
 			"eventsPerMinute": 1
 		},
 		{
-			"header":"Battery Voltage",
-			"unit":"V",
-			"obdPID":42
-
+			"header": "CC Active",
+			"canId": 357,
+			"offset": 0,
+			"length": 1,
+			"expr": "lutTable(\"CC Active\", x)",
+			"lutTable": [
+				{
+					"x": 46,
+					"y": 1
+				},
+				{
+					"x": 40,
+					"y": 0
+				}
+			],
+			"hidden": false,
+			"noLog": true,
+			"_note": "issue: 64 is off and limiter"
+		},
+		
+		{
+			"header": "Brightness",
+			"expr": "setBrightness(lutTable(\"Brightness\", x))",
+			"canId": "0x9A",
+			"offset": 0,
+			"length": 1,
+			"_note": "test and adjust values",
+			"lutTable": [
+				{
+					"x": 0,
+					"y": 90
+				},
+				{
+					"x": 16,
+					"y": 90
+				},
+				{
+					"x": 32,
+					"y": 40
+				},
+				{
+					"x": 48,
+					"y": 40
+				},
+				{
+					"x": 192,
+					"y": 40
+				}
+			]
 		}
 	]
 }

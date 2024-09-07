@@ -1,0 +1,38 @@
+[
+    {
+        "header": "info- press",
+        "canId": "0x274",
+        "offset": 58,
+        "length": 1,
+        "hidden": false,
+        "noLog": true,
+        "_note":"does't work on mx5"
+    },
+    {
+        "header": "info+ press",
+        "canId": "0x274",
+        "offset": 59,
+        "length": 1,
+        "hidden": false,
+        "noLog": true,
+        "_note":"does't work on mx5"
+    },
+    {
+        "header": "CC Active ALT",
+        "canId": 357,
+        "offset": 6,
+        "length": 3,
+        "expr": "x!=0",
+        "hidden": false,
+        "noLog": true,
+        "_note": "test this and figure out whether this is based on the toggle button or only on if the actual CC is active"
+    },
+    {
+        "header": "Coolant Temp CAN",
+        "unit": "°C",
+        "canId": "0x420",
+        "offset": 7,
+        "length": 8,
+        "_note":"always 119 -> probably wrong"
+    },
+]

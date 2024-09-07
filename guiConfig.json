@@ -1,5 +1,5 @@
 {
-  "maxCustom": 4,
+  "maxCustom": 6,
   "currentDisplay": 1,
   "paramDisp": [
     {
@@ -75,6 +75,54 @@
         }
       ],
       "type": 1
+    },
+    {
+      "rows": 3,
+      "cols": 2,
+      "paramObj": [
+        {
+          "displayConfig": 3,
+          "name": "Throttle Position"
+        },
+        {
+          "displayConfig": 3,
+          "name": "Speed"
+        },
+        {
+          "displayConfig": 3,
+          "name": "Engine Speed"
+        },
+        {
+          "name": "Coolant Temp CAN"
+        },
+        {
+          "name": "Coolant Temp"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "cols": 2,
+      "paramObj": [
+        {
+          "name": "info+ press"
+        },
+        {
+          "name": "info- press"
+        },
+        {
+          "name": "Brightness"
+        },
+        {
+          "name": "CC Active ALT"
+        },
+        {
+          "name": "CC Active"
+        },
+        {
+          "name": "CC Active ALT"
+        }
+      ]
     }
   ]
 }

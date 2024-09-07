@@ -2,7 +2,7 @@
   "config": {
     "gps": false,
     "maxLogSpeed": 15,
-    "autoLogEnabled": false,
+    "autoLogEnabled": true,
     "autoLogDelay": 5,
     "logFromStart": false,
     "beta": false,
