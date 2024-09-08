@@ -15,6 +15,7 @@ Config of [Gauge.S by Sorek.uk](https://github.com/handmade0octopus/gauge.s-sore
 - https://docs.google.com/spreadsheets/d/1uqwIMof9DdaEv0EkWHXe70XNGt0FGeDxpbMAgfKbbdk/edit?gid=0#gid=0
 - https://www.mx5-nd-forum.de/forum/thread/7187-tpms-data-through-obd-ecu/?pageNo=1
 - https://github.com/majbthrd/MazdaCANbus/blob/master/skyactiv.kcd
+- https://github.com/Viaszx/Mazda-SkyActiv-EngineCoolantTemp/blob/main/can/can.c -> fetches skyactiv coolant temp from id 0x420
 
   
 

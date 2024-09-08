@@ -33,6 +33,6 @@
         "canId": "0x420",
         "offset": 7,
         "length": 8,
-        "_note":"always 119 -> probably wrong"
+        "_note":"always 119 -> probably wrong -> found another project using offset 0. log can messages and verify. Needs -40 offset?"
     },
 ]
