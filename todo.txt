@@ -1,0 +1,9 @@
+test:
+RPM -> test in real time using visualization
+Coolant temp -> wait on answer from Viaszx
+Ignition status -> works
+sleep when ignition off -> wait on Sorek answer
+Throttle position -> test and compare against obd
+cruise control buttons -> get clean can logs that hopefully contains some info
+
+

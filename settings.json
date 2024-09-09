@@ -7,7 +7,7 @@
     "logFromStart": false,
     "beta": false,
     "snake": false,
-    "canSniffer": false,
+    "canSniffer": true,
     "forceStop": false,
     "sleepTime": 0,
     "wakupMask": 0
@@ -27,7 +27,7 @@
   },
   "brightHandler": {
     "brightness": 153,
-    "fadeTime": 30,
+    "fadeTime": 10,
     "lockScreen": false
   }
 }
