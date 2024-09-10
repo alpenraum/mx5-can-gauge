@@ -39,9 +39,19 @@
 			"offset": 2,
 			"length": 2,
 			"dec": 0,
-			"expr": "signed(x)/360",
+			"expr": "signed(x)/100",
 			"max": 220,
-			"_note": "retest - wrong offset was used - seems to be signed int"
+			"_note": "retest - calculation was wrong"
+		},
+		{
+			"header": "Speed unsigned",
+			"unit": "km/h",
+			"canId": 514,
+			"offset": 2,
+			"length": 2,
+			"dec": 0,
+			"expr": "x/100",
+			"max": 220
 		},
 
 		{
