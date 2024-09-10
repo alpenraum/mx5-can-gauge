@@ -7,7 +7,7 @@
     "logFromStart": false,
     "beta": false,
     "snake": false,
-    "canSniffer": true,
+    "canSniffer": false,
     "forceStop": false,
     "sleepTime": 0,
     "wakupMask": 0

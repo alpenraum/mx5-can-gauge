@@ -23,4 +23,11 @@
         "eventsPerMinute": 10,
         "autoLogPoint": 60
     },
+    {
+        "header": "Sleep when ignition off",
+        "x": "Ignition on",
+        "expr": "sleep(x==0)",
+        "hidden": true,
+        "noLog": true
+    },
 ]

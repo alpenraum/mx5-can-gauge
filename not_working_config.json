@@ -34,5 +34,101 @@
         "offset": 7,
         "length": 8,
         "_note":"always 119 -> probably wrong -> found another project using offset 0. log can messages and verify. Needs -40 offset?"
-    }
+    },
+
+    // everything past here only produces garbage data, just use the obd values instead of trying to get them from can
+},
+{
+    "header": "Throttle Position",
+    "unit": "%",
+    "canId": 514,
+    "offset": 4,
+    "length": 2,
+    "dec": 0,
+    "expr": "x*100/64000",
+    "_note": "needs more testing and comparison to obd TPS- seems to work from logs"
+},
+{
+    "header": "Throttle Position alt racechrono",
+    "unit": "%",
+    "canId": 514,
+    "offset": 4,
+    "length": 1,
+    "dec": 0,
+    "expr": "x/2.5",
+    "_note": "needs more testing and comparison to obd TPS- seems to work from logs"
+},
+{
+    "header": "Throttle Position Raw",
+    "unit": "%",
+    "canId": 514,
+    "offset": 4,
+    "length": 2,
+    "hidden":true
+},
+{
+    "header": "Throttle Position alt racechrono raw",
+    "unit": "%",
+    "canId": 514,
+    "offset": 4,
+    "length": 1,
+    "dec": 0,
+    "hidden":true
+},
+{
+    "header": "Engine Speed",
+    "alias": "RPM",
+    "unit": "RPM",
+    "canId": 514,
+    "offset": 0,
+    "length": 2,
+    "dec": 0,
+    "expr": "x/4",
+    "max": 8000,
+    "_note": "needs filtering - sometimes goes to 16066 - seems wild needs more testing"
+},
+{
+    "header": "Engine Speed raw",
+    "alias": "RPM",
+    "unit": "RPM",
+    "canId": 514,
+    "offset": 0,
+    "length": 2,
+    "dec": 0,
+    "max": 8000,
+    "hidden":true
+},
+{
+    "header": "Speed",
+    "unit": "km/h",
+    "canId": 514,
+    "offset": 2,
+    "length": 2,
+    "dec": 0,
+    "expr": "signed(x)/100",
+    "max": 220,
+    "_note": "retest - calculation was wrong"
+},
+{
+    "header": "Speed unsigned",
+    "unit": "km/h",
+    "canId": 514,
+    "offset": 2,
+    "length": 2,
+    "dec": 0,
+    "expr": "x/100",
+    "max": 220
+},
+
+{
+    "header": "Speed Raw",
+    "unit": "km/h",
+    "canId": 514,
+    "offset": 2,
+    "length": 2,
+    "dec": 0,
+    "max": 220,
+    "_note": "retest - wrong offset was used - seems to be signed int",
+    "hidden":true
+},
 ]
