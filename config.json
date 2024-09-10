@@ -15,6 +15,24 @@
 			"_note": "needs filtering - sometimes goes to 16066 - seems wild needs more testing"
 		},
 		{
+			"header": "Engine Speed raw",
+			"alias": "RPM",
+			"unit": "RPM",
+			"canId": 514,
+			"offset": 0,
+			"length": 2,
+			"dec": 0,
+			"max": 8000,
+			"hidden":true
+		},
+		{
+			"header": "Engine Speed obd",
+			"unit": "RPM",
+			"obdPID": 12,
+			"max": 7000,
+			"dec": 0
+		},
+		{
 			"header": "Speed",
 			"unit": "km/h",
 			"canId": 514,
@@ -25,12 +43,29 @@
 			"max": 220,
 			"_note": "retest - wrong offset was used - seems to be signed int"
 		},
+
+		{
+			"header": "Speed Raw",
+			"unit": "km/h",
+			"canId": 514,
+			"offset": 2,
+			"length": 2,
+			"dec": 0,
+			"max": 220,
+			"_note": "retest - wrong offset was used - seems to be signed int",
+			"hidden":true
+		},
+		{
+			"header": "Speed Obd",
+			"unit": "km/h",
+			"obdPID": 13
+		},
 		{
 			"header": "Throttle Position",
 			"unit": "%",
 			"canId": 514,
 			"offset": 4,
-			"length": 1,
+			"length": 2,
 			"dec": 0,
 			"expr": "x*100/64000",
 			"_note": "needs more testing and comparison to obd TPS- seems to work from logs"
@@ -46,29 +81,28 @@
 			"_note": "needs more testing and comparison to obd TPS- seems to work from logs"
 		},
 		{
-			"header": "MAP",
-			"unit": "kPa",
-			"obdPID": 11
+			"header": "Throttle Position obd",
+			"unit": "%",
+			"obdPID": "0x11"
 		},
 		{
-			"header": "Lambda",
-			"unit": "Lmb",
-			"obdPID": 52,
-			"max": 0.8,
-			"min": 1.1
+			"header": "Throttle Position Raw",
+			"unit": "%",
+			"canId": 514,
+			"offset": 4,
+			"length": 2,
+			"hidden":true
 		},
 		{
-			"header": "Ignition Angle",
-			"unit": "°CRK",
-			"obdPID": 14
+			"header": "Throttle Position alt racechrono raw",
+			"unit": "%",
+			"canId": 514,
+			"offset": 4,
+			"length": 1,
+			"dec": 0,
+			"hidden":true
 		},
-		{
-			"header": "Intake Air Temp",
-			"unit": "°C",
-			"obdPID": 15,
-			"eventsPerMinute": 10,
-			"autoLogPoint": 60
-		},
+		
 		{
 			"header": "Coolant Temp",
 			"unit": "°C",

@@ -77,12 +77,16 @@
       "type": 1
     },
     {
-      "rows": 3,
+      "rows": 2,
       "cols": 2,
       "paramObj": [
         {
           "displayConfig": 3,
-          "name": "Throttle Position"
+          "name": "Engine Speed"
+        },
+        {
+          "displayConfig": 3,
+          "name": "Engine Speed obd"
         },
         {
           "displayConfig": 3,
@@ -90,38 +94,27 @@
         },
         {
           "displayConfig": 3,
-          "name": "Engine Speed"
-        },
-        {
-          "name": "Coolant Temp CAN"
-        },
-        {
-          "name": "Coolant Temp"
+          "name": "Speed Obd"
         }
       ]
     },
     {
       "rows": 3,
-      "cols": 2,
+      "cols": 1,
       "paramObj": [
         {
-          "name": "Ignition on"
+          "displayConfig":4,
+          "name": "Throttle Position"
         },
         {
-          "name": "info- press"
+          "displayConfig":4,
+          "name": "Throttle Position alt racechrono"
         },
         {
-          "name": "Brightness"
-        },
-        {
-          "name": "CC Active ALT"
-        },
-        {
-          "name": "CC Active"
-        },
-        {
-          "name": "CC Active ALT"
+          "displayConfig":4,
+          "name": "Throttle Position obd"
         }
+       
       ]
     }
   ]
