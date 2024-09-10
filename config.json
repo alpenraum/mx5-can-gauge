@@ -3,20 +3,6 @@
 	"canSpeed": 500,
 	"ecuparam": [
 		{
-			"header": "Trip 1",
-			"unit": "km",
-			"expr": "trip(\"Trip 1\",x)",
-			"x": "Speed",
-			"noLog": true
-		},
-		{
-			"header": "Trip 2",
-			"unit": "km",
-			"expr": "trip(\"Trip 2\",x)",
-			"x": "Speed",
-			"noLog": true
-		},
-		{
 			"header": "Engine Speed",
 			"alias": "RPM",
 			"unit": "RPM",
@@ -26,7 +12,7 @@
 			"dec": 0,
 			"expr": "x/4",
 			"max": 8000,
-			"_note": "needs filtering - sometimes goes to 16066"
+			"_note": "needs filtering - sometimes goes to 16066 - seems wild needs more testing"
 		},
 		{
 			"header": "Speed",
@@ -35,18 +21,28 @@
 			"offset": 2,
 			"length": 2,
 			"dec": 0,
-			"expr": "x/360",
+			"expr": "signed(x)/360",
 			"max": 220,
-			"_note": "retest - wrong offset was used"
+			"_note": "retest - wrong offset was used - seems to be signed int"
 		},
 		{
 			"header": "Throttle Position",
 			"unit": "%",
 			"canId": 514,
 			"offset": 4,
-			"length": 2,
+			"length": 1,
 			"dec": 0,
 			"expr": "x*100/64000",
+			"_note": "needs more testing and comparison to obd TPS- seems to work from logs"
+		},
+		{
+			"header": "Throttle Position alt racechrono",
+			"unit": "%",
+			"canId": 514,
+			"offset": 4,
+			"length": 1,
+			"dec": 0,
+			"expr": "x/2.5",
 			"_note": "needs more testing and comparison to obd TPS- seems to work from logs"
 		},
 		{
@@ -60,12 +56,6 @@
 			"obdPID": 52,
 			"max": 0.8,
 			"min": 1.1
-		},
-		{
-			"header": "MAF",
-			"unit": "kg/h",
-			"obdPID": 16,
-			"mul": 3.6
 		},
 		{
 			"header": "Ignition Angle",
@@ -86,58 +76,59 @@
 			"eventsPerMinute": 10
 		},
 		{
-			"header": "STFT 1",
-			"unit": "%",
-			"obdPID": 20
-		},
-		{
-			"header": "STFT 2",
-			"unit": "%",
-			"obdPID": 21
-		},
-		{
-			"header": "Adapt Add 1",
-			"unit": "%",
-			"obdPID": 6,
-			"eventsPerMinute": 1
-		},
-		{
-			"header": "Adapt Add 2",
-			"unit": "%",
-			"obdPID": 8,
-			"eventsPerMinute": 1
-		},
-		{
-			"header": "Adapt Mul 1",
-			"unit": "%",
-			"obdPID": 7,
-			"eventsPerMinute": 1
-		},
-		{
-			"header": "Adapt Mul 2",
-			"unit": "%",
-			"obdPID": 9,
-			"eventsPerMinute": 1
+			"header": "Coolant Temp CAN",
+			"unit": "°C",
+			"canId": "0x420",
+			"offset": 0,
+			"length": 4,
+			"expr": "x",
+			"_note": "id is correct, but offset and length no idea"
 		},
 		{
 			"header": "CC Active",
-			"canId": 357,
+			"canId": "0x165",
 			"offset": 0,
 			"length": 1,
 			"expr": "lutTable(\"CC Active\", x)",
 			"lutTable": [
 				{
 					"x": 46,
-					"y": 1
+					"y": 0
 				},
 				{
 					"x": 40,
+					"y": 1
+				}
+			],
+			"hidden": true,
+			"noLog": true,
+			"_note": "issue: 46 is off and limiter"
+		},
+		{
+			"header": "Ignition on",
+			"canId": "0x50",
+			"offset": 0,
+			"length": 1,
+			"expr": "lutTable(\"Ignition on\", x)",
+			"lutTable": [
+				{
+					"x": 2,
+					"y": 1
+				},
+				{
+					"x": 0,
 					"y": 0
 				}
 			],
 			"hidden": false,
-			"noLog": true,
-			"_note": "issue: 64 is off and limiter"
+			"noLog": false
+		},
+		{
+			"header": "Sleep when ignition off",
+			"x": "Ignition on",
+			"expr": "sleep(x==0)",
+			"hidden": true,
+			"noLog": true
 		},
 		{
 			"header": "Brightness",
@@ -145,7 +136,8 @@
 			"canId": "0x9A",
 			"offset": 0,
 			"length": 1,
-			"_note": "test and adjust values",
+			"hidden": true,
+			"noLog": true,
 			"lutTable": [
 				{
 					"x": 0,
