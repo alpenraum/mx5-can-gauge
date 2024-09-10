@@ -124,9 +124,9 @@
 			"unit": "°C",
 			"canId": "0x420",
 			"offset": 0,
-			"length": 4,
-			"expr": "x",
-			"_note": "id is correct, but offset and length no idea"
+			"length": 1,
+			"expr": "x-40",
+			"_note": "id is correct, test length 1 (values only go 0-255)"
 		},
 		{
 			"header": "CC Active",
