@@ -29,11 +29,11 @@
       "paramObj": [
         {
           "displayConfig": 4,
-          "name": "Engine Speed"
+          "name": "TPS"
         },
         {
           "displayConfig": 4,
-          "name": "Oil Temp"
+          "name": "Engine Load"
         }
       ]
     },
@@ -41,11 +41,10 @@
       "rows": 3,
       "cols": 2,
       "paramObj": [
+        
         {
-          "name": "MAF"
-        },
-        {
-          "name": "Engine Load"
+          "displayConfig":2,
+          "name": "Coolant Temp"
         },
         {
           "displayConfig": 3,
@@ -57,12 +56,14 @@
         },
         {
           "displayConfig": 4,
-          "name": "Coolant Temp"
+          "name": "Ignition Angle"
         },
         {
-          "displayConfig": 4,
-          "name": "Ignition Angle"
-        }
+          "name": "MAP"
+        },
+        {
+          "displayConfig": 3,
+          "name":"Fuel pressure"}
       ]
     },
     {
@@ -75,47 +76,6 @@
         }
       ],
       "type": 1
-    },
-    {
-      "rows": 2,
-      "cols": 2,
-      "paramObj": [
-        {
-          "displayConfig": 3,
-          "name": "Engine Speed"
-        },
-        {
-          "displayConfig": 3,
-          "name": "Engine Speed obd"
-        },
-        {
-          "displayConfig": 3,
-          "name": "Speed"
-        },
-        {
-          "displayConfig": 3,
-          "name": "Speed Obd"
-        }
-      ]
-    },
-    {
-      "rows": 3,
-      "cols": 1,
-      "paramObj": [
-        {
-          "displayConfig":4,
-          "name": "Throttle Position"
-        },
-        {
-          "displayConfig":4,
-          "name": "Throttle Position alt racechrono"
-        },
-        {
-          "displayConfig":4,
-          "name": "Throttle Position obd"
-        }
-       
-      ]
     }
   ]
 }

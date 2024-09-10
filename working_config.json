@@ -1,28 +1,5 @@
 [
-    {
-        "header": "MAP",
-        "unit": "kPa",
-        "obdPID": 11
-    },
-    {
-        "header": "Lambda",
-        "unit": "Lmb",
-        "obdPID": 52,
-        "max": 0.8,
-        "min": 1.1
-    },
-    {
-        "header": "Ignition Angle",
-        "unit": "°CRK",
-        "obdPID": 14
-    },
-    {
-        "header": "Intake Air Temp",
-        "unit": "°C",
-        "obdPID": 15,
-        "eventsPerMinute": 10,
-        "autoLogPoint": 60
-    },
+    
     {
         "header": "Sleep when ignition off",
         "x": "Ignition on",

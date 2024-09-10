@@ -1,10 +1,13 @@
 test:
-RPM -> test in real time using visualization
-Coolant temp -> try out offset 0 and byte length 1 since obd also only returns 1 byte
-Throttle position -> log raw data and compare against obd
 cruise control buttons -> get clean can logs that hopefully contains some info
 
 
 done:
 Ignition status -> works
 sleep when ignition off -> available in future update of Gauge.S 
+coolant -> works
+
+not working:
+RPM -> online sources are just plain wrong it seems like -> just use obd 
+TPS -> online sources are just plain wrong it seems like -> just use obd
+Speed -> online sources are just plain wrong it seems like -> just use obd
