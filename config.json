@@ -26,8 +26,7 @@
 			"dec": 0,
 			"expr": "x/4",
 			"max": 8000,
-			"_note":"needs filtering - sometimes goes to 16066"
-
+			"_note": "needs filtering - sometimes goes to 16066"
 		},
 		{
 			"header": "Speed",
@@ -38,7 +37,7 @@
 			"dec": 0,
 			"expr": "x/360",
 			"max": 220,
-			"_note":"retest - wrong offset was used"
+			"_note": "retest - wrong offset was used"
 		},
 		{
 			"header": "Throttle Position",
@@ -48,7 +47,7 @@
 			"length": 2,
 			"dec": 0,
 			"expr": "x*100/64000",
-			"_note":"needs more testing and comparison to obd TPS- seems to work from logs"
+			"_note": "needs more testing and comparison to obd TPS- seems to work from logs"
 		},
 		{
 			"header": "MAP",
@@ -140,7 +139,6 @@
 			"noLog": true,
 			"_note": "issue: 64 is off and limiter"
 		},
-		
 		{
 			"header": "Brightness",
 			"expr": "setBrightness(lutTable(\"Brightness\", x))",
@@ -151,23 +149,28 @@
 			"lutTable": [
 				{
 					"x": 0,
-					"y": 90
+					"y": 90,
+					"_note": "off"
 				},
 				{
 					"x": 16,
-					"y": 90
+					"y": 90,
+					"_note": "drl"
 				},
 				{
 					"x": 32,
-					"y": 40
+					"y": 40,
+					"_note": "parking lights"
 				},
 				{
 					"x": 48,
-					"y": 40
+					"y": 40,
+					"_note": "low beam"
 				},
 				{
 					"x": 192,
-					"y": 40
+					"y": 40,
+					"_note": "high beam"
 				}
 			]
 		}

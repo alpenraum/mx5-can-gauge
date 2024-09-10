@@ -15,7 +15,7 @@
         "length": 1,
         "hidden": false,
         "noLog": true,
-        "_note":"does't work on mx5"
+        "_note":"doesn't work on mx5"
     },
     {
         "header": "CC Active ALT",
@@ -34,5 +34,5 @@
         "offset": 7,
         "length": 8,
         "_note":"always 119 -> probably wrong -> found another project using offset 0. log can messages and verify. Needs -40 offset?"
-    },
+    }
 ]
