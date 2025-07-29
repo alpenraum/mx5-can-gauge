@@ -1,25 +1,22 @@
 {
   "maxCustom": 6,
-  "currentDisplay": 1,
+  "currentDisplay": 2,
   "paramDisp": [
     {
       "rows": 2,
       "cols": 2,
       "paramObj": [
         {
-          "name": "Battery Voltage"
+          "name": "Car is cold"
         },
         {
           "displayConfig": 3,
-          "name": "Trip 1"
+          "name": "Coolant Temp"
         },
-        {
-          "displayConfig": 3,
-          "name": "Econ avg 1"
-        },
+       
         {
           "displayConfig": 4,
-          "name": "Economy"
+          "name": "Engine Speed"
         }
       ]
     },
@@ -38,12 +35,11 @@
       ]
     },
     {
-      "rows": 3,
+      "rows": 2,
       "cols": 2,
       "paramObj": [
-        
         {
-          "displayConfig":2,
+          "displayConfig": 4,
           "name": "Coolant Temp"
         },
         {
@@ -55,15 +51,9 @@
           "name": "Lambda"
         },
         {
-          "displayConfig": 4,
-          "name": "Ignition Angle"
-        },
-        {
-          "name": "MAP"
-        },
-        {
           "displayConfig": 3,
-          "name":"Fuel pressure"}
+          "name": "Ignition Angle"
+        }
       ]
     },
     {
@@ -76,6 +66,33 @@
         }
       ],
       "type": 1
+    },
+    {
+      "rows": 2,
+      "cols": 2,
+      "paramObj": [
+        {
+          "name": "Input V"
+        },
+        {
+          "name": "MAP"
+        },
+        {
+          "name": "Fuel pressure"
+        }
+      ]
+    },
+    {
+      "rows": 2,
+      "cols": 2,
+      "paramObj": [
+        {
+          "name": "CC Active"
+        },
+        {
+          "name": "Ignition on"
+        }
+      ]
     }
   ]
 }
