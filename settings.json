@@ -9,12 +9,15 @@
     "snake": false,
     "canSniffer": false,
     "forceStop": false,
-    "sleepTime": 0,
-    "wakupMask": 0
+    "sleepTime": 20,
+    "wakupMask": 0,
+    "wakeupCode": 0,
+    "wakeupMask": 0,
+    "valetMode": 0
   },
   "wifiConfig": {
     "forceWifi": true,
-    "wifiSSID": "Logger.S",
+    "wifiSSID": "Logger.s",
     "wifiPSWD": "logger.s",
     "ftpServer": "",
     "ftpUser": "",
@@ -28,6 +31,6 @@
   "brightHandler": {
     "brightness": 153,
     "fadeTime": 10,
-    "lockScreen": false
+    "lockScreen": 0
   }
 }
