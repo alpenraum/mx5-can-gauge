@@ -6,8 +6,9 @@
 			"header": "Engine Speed",
 			"unit": "RPM",
 			"obdPID": 12,
-			"max": 7000,
-			"dec": 0
+			"max": 7200,
+			"dec": 0,
+			"flashpoint":7100
 		},
 		{
 			"header": "Speed",
@@ -34,7 +35,8 @@
 			"unit": "Lmb",
 			"obdPID": 52,
 			"max": 0.8,
-			"min": 1.1
+			"min": 1.1,
+			"autoLogPoint":1.02
 		},
 		{
 			"header": "Ignition Angle",
@@ -61,7 +63,19 @@
 			"canId": "0x420",
 			"offset": 0,
 			"length": 1,
-			"expr": "x-40"
+			"expr": "x-40",
+			"autoLogPoint":"105",
+			"flashPoint":"100"
+		},
+		{
+		  "header":"Car is cold",
+		  "unit": "bool",
+		  "expr":"((x>3000)&&(y<80))",
+		  "x":"Engine Speed",
+		  "y":"Coolant Temp",
+	  	"hidden": true,
+			"noLog": true,
+			"flashpoint":1
 		},
 		{
 			"header": "CC Active",
