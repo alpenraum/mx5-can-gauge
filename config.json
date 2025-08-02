@@ -8,7 +8,7 @@
 			"obdPID": 12,
 			"max": 7200,
 			"dec": 0,
-			"flashpoint":7100
+			"flashPoint":7100
 		},
 		{
 			"header": "Speed",
@@ -55,7 +55,8 @@
 			"unit": "°C",
 			"obdPID": 15,
 			"eventsPerMinute": 10,
-			"autoLogPoint": 60
+			"autoLogPoint": 60,
+			"eventsPerSecond": 0.1
 		},
 		{
 			"header": "Coolant Temp",
@@ -64,57 +65,91 @@
 			"offset": 0,
 			"length": 1,
 			"expr": "x-40",
-			"autoLogPoint":"105",
-			"flashPoint":"100"
+			"autoLogPoint":110,
+			"flashPoint":110,
+			"warningString": "CAR IS HOT IDIOT",
+    		"warningPoint": 105
 		},
 		{
-		  "header":"Car is cold",
-		  "unit": "bool",
-		  "expr":"((x>3000)&&(y<80))",
-		  "x":"Engine Speed",
-		  "y":"Coolant Temp",
-	  	"hidden": true,
+			"header":"Car is cold",
+			"alias":"",
+			"expr":"((x>3000)&&(y<80))",
+			"x":"Engine Speed",
+			"y":"Coolant Temp",
+			"hidden": true,
 			"noLog": true,
-			"flashpoint":1
+			"warningString": "CAR IS COLD IDIOT",
+    		"warningPoint": 0.9
 		},
 		{
-			"header": "CC Active",
+			"header": "cc_active",
 			"canId": "0x165",
 			"offset": 0,
 			"length": 1,
-			"expr": "lutTable(\"CC Active\", x)",
-			"lutTable": [
-				{
-					"x": 46,
-					"y": 0
-				},
-				{
-					"x": 40,
-					"y": 1
-				}
-			],
+			"expr": "x==70",
 			"hidden": true,
 			"noLog": true,
-			"_note": "issue: 46 is off and limiter"
+			"_note": ""
+		},
+			{
+			"header": "limit_active",
+			"canId": "0x165",
+			"offset": 5,
+			"length": 1,
+			"expr": "x==144",
+			"hidden": true,
+			"noLog": true,
+			"_note": ""
+		},
+		{
+			"header": "limit_cc_active",
+			"x":"cc_active",
+			"y":"limit_active",
+			"expr": "x || y",
+			"hidden": true,
+			"noLog": true,
+			"_note": ""
 		},
 		{
 			"header": "Ignition on",
 			"canId": "0x50",
 			"offset": 0,
 			"length": 1,
-			"expr": "lutTable(\"Ignition on\", x)",
-			"lutTable": [
-				{
-					"x": 2,
-					"y": 1
-				},
-				{
-					"x": 0,
-					"y": 0
-				}
-			],
+			"expr": "sleep(x == 0)",
+			"hidden": true,
+			"noLog": true,
+			"_note": "0 = off, 1= acc, 2 = ignition"
+		},
+
+		{
+			"header":"cc_plus_btn",
+			"canId":"0x09D",
+			"offset": 0,
+			"length": 1,
+			"expr": "x==8",
 			"hidden": true,
 			"noLog": true
+		},
+		{
+			"header": "btn_press",
+			"unit": "b",
+			"expr": "buttonPress(x && !y,0,0,0)",
+			"x": "cc_plus_btn", 
+			"y": "limit_cc_active",
+			"hidden": true,
+			"noLog": true
+		},
+		{
+			"header": "Lateral G",
+			"alias": "Lat G",
+			"expr": "filter(\"Accel X\", 5)",
+			"dec": 2
+		},
+		{
+			"header": "Longitudinal G",
+			"alias": "Lon G",
+			"expr": "-filter(\"Accel Z\", 5)", 
+			"dec": 2
 		},
 		{
 			"header": "Brightness",

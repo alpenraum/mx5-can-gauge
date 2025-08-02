@@ -1,21 +1,17 @@
 {
-  "maxCustom": 6,
-  "currentDisplay": 2,
+  "maxCustom": 7,
+  "currentDisplay": 0,
   "paramDisp": [
     {
       "rows": 2,
-      "cols": 2,
+      "cols": 1,
       "paramObj": [
         {
-          "name": "Car is cold"
-        },
-        {
-          "displayConfig": 3,
+          "displayConfig": 4,
           "name": "Coolant Temp"
         },
-       
         {
-          "displayConfig": 4,
+            "displayConfig": 3,
           "name": "Engine Speed"
         }
       ]
@@ -39,19 +35,19 @@
       "cols": 2,
       "paramObj": [
         {
-          "displayConfig": 4,
+          "displayConfig": 3,
           "name": "Coolant Temp"
         },
         {
-          "displayConfig": 3,
+          "displayConfig": 4,
           "name": "Intake Air Temp"
         },
         {
-          "displayConfig": 3,
+          "displayConfig": 4,
           "name": "Lambda"
         },
         {
-          "displayConfig": 3,
+          "displayConfig": 4,
           "name": "Ignition Angle"
         }
       ]
@@ -65,7 +61,20 @@
           "name": "Accel Z"
         }
       ],
-      "type": 1
+       "type": 3
+    },
+    {
+      "rows": 2,
+      "cols": 1,
+      "paramObj": [
+        {
+          "name": "Longitudinal G"
+        },
+        {
+          
+          "name": "Lateral G"
+        }
+      ]
     },
     {
       "rows": 2,
@@ -79,6 +88,9 @@
         },
         {
           "name": "Fuel pressure"
+        },
+        {
+          "name": "Input V"
         }
       ]
     },
@@ -87,10 +99,20 @@
       "cols": 2,
       "paramObj": [
         {
-          "name": "CC Active"
+           "displayConfig": 4,
+          "name": "Input V"
         },
         {
-          "name": "Ignition on"
+          "displayConfig": 3,
+          "name": "Accel X"
+        },
+        {
+          "displayConfig": 3,
+          "name": "Accel Y"
+        },
+        {
+          "displayConfig": 3,
+          "name": "Accel Z"
         }
       ]
     }

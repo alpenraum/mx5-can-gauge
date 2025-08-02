@@ -9,16 +9,15 @@
     "snake": false,
     "canSniffer": false,
     "forceStop": false,
-    "sleepTime": 20,
-    "wakupMask": 0,
-    "wakeupCode": 0,
-    "wakeupMask": 0,
+    "sleepTime": 10,
+    "wakeupMask": "0x000000FF",
+    "wakeupCode": "0x0A000200",
     "valetMode": 0
   },
   "wifiConfig": {
     "forceWifi": true,
-    "wifiSSID": "Logger.s",
-    "wifiPSWD": "logger.s",
+    "wifiSSID": "Gauge.S",
+    "wifiPSWD": "gauge.s",
     "ftpServer": "",
     "ftpUser": "",
     "ftpPass": "",
@@ -29,7 +28,7 @@
     "daylightOffset": 1
   },
   "brightHandler": {
-    "brightness": 153,
+    "brightness": 229,
     "fadeTime": 10,
     "lockScreen": 0
   }
