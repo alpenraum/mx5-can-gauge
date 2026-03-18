@@ -1,13 +1,1 @@
-test:
-cruise control buttons -> get clean can logs that hopefully contains some info
 
-
-done:
-Ignition status -> works
-sleep when ignition off -> available in future update of Gauge.S 
-coolant -> works
-
-not working:
-RPM -> online sources are just plain wrong it seems like -> just use obd 
-TPS -> online sources are just plain wrong it seems like -> just use obd
-Speed -> online sources are just plain wrong it seems like -> just use obd
